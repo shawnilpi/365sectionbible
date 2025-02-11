@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chronological Bible in a Year Reading Plan</title>
-  <!-- Load Montserrat for a modern, luxurious look (Bold weight for headings) -->
+  <!-- Load Montserrat for a modern, luxurious look (Bold for header) -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
     /* Basic Reset */
@@ -14,15 +14,15 @@
       box-sizing: border-box;
     }
     
-    /* Base body styles */
     body {
-      background-color: #ffffff; /* White background */
-      color: #36454F; /* Medium charcoal text */
+      background-color: #ffffff;
+      color: #36454F; /* Medium charcoal */
       font-family: 'Montserrat', sans-serif;
       margin: 0;
+      padding: 10px;
     }
     
-    /* Header styling matching left2 header, scaled down */
+    /* Header section matching left2 style */
     header {
       width: 100%;
       padding: 5px 0; /* Compact vertical padding */
@@ -31,39 +31,37 @@
       text-align: left;
     }
     
-    /* Container: full width, flush left with minimal left padding */
+    /* Container for header content: flush left with minimal padding */
     .container {
       width: 100%;
       margin: 0;
-      padding-left: 5px; /* Minimal left padding */
+      padding-left: 5px;
     }
     
-    /* Greeting styling: using Montserrat Bold, scaled down to 16px */
-    .greeting {
+    /* Header title using Montserrat Bold at 16px */
+    .header-title {
       font-size: 16px;
       font-weight: 700;
-      margin-bottom: 3px;
-      line-height: 1.2;
+      margin-bottom: 10px;
+      text-align: left;
     }
     
-    /* Date text styling: small */
-    .date-text {
-      font-size: 0.75rem;
-      margin-bottom: 3px;
-    }
-    
-    /* (Optional) Clock styling if needed */
-    .clock {
-      font-size: 1rem;
+    /* Day display uses normal Montserrat, 12px */
+    .day-display {
+      font-size: 12px;
       font-weight: 400;
+      margin-bottom: 10px;
     }
     
-    /* Plan widget container */
+    /* Widget container styled like a Notion block */
     #planWidget {
       max-width: 600px;
       width: 100%;
       margin: 10px auto;
       padding: 10px;
+      border: 1px solid #e0e0e0;
+      border-radius: 4px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
     
     /* Assignment text styling */
@@ -85,12 +83,11 @@
   </style>
 </head>
 <body>
-  <!-- Header using left2 style -->
+  <!-- Header Section (using Montserrat Bold as in left2 header) -->
   <header>
     <div class="container">
-      <div class="greeting">Chronological Bible Reading Plan</div>
-      <div class="date-text" id="dayDisplay"></div>
-      <!-- (Optional: you can include a clock here if desired) -->
+      <div class="header-title">Chronological Bible Reading Plan</div>
+      <div class="day-display" id="dayDisplay"></div>
     </div>
   </header>
   
@@ -101,14 +98,8 @@
   </div>
   
   <script>
-    /* 
-      Define the sections in chronological order.
-      Each section includes:
-        - section: The Bible portion name.
-        - verses: The passages to be read (displayed as "Today's reading:" line).
-        - days: The number of days allocated to that section.
-      The last section ("Supplementary Review & Reflection") is allocated enough days to reach exactly 365.
-    */
+    // Define the sections in chronological order.
+    // Each section has a name, a set of verses (which will display as "Today's reading:"), and the number of days allocated.
     const sections = [
       { section: "Job", verses: "Job 1-42", days: 8 },
       { section: "Genesis", verses: "Genesis 1-50", days: 15 },
