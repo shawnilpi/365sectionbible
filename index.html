@@ -3,51 +3,72 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Today's Bible Verse</title>
-  <!-- Load Montserrat Bold (700) from Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <title>Chronological Bible in a Year Reading Plan</title>
+  <!-- Load Montserrat for a modern, luxurious look (Bold weight for headings) -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
     /* Basic Reset */
     *, *::before, *::after {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
     
+    /* Base body styles */
     body {
-      background-color: #ffffff;
-      color: #36454F; /* Medium charcoal */
+      background-color: #ffffff; /* White background */
+      color: #36454F; /* Medium charcoal text */
       font-family: 'Montserrat', sans-serif;
-      padding: 5px;
+      margin: 0;
     }
     
-    /* Widget container styled to mimic a Notion block */
-    #planWidget {
-      max-width: 1000px;
+    /* Header styling matching left2 header, scaled down */
+    header {
       width: 100%;
-      border: 1px solid #e0e0e0;
-      padding: 5px;
-      border-radius: 5px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    }
-    
-    /* Header style matching left2 header, scaled down to 16px */
-    h1 {
-      font-size: 16px; 
-      font-weight: 700;
+      padding: 5px 0; /* Compact vertical padding */
+      background-color: #ffffff;
+      border-bottom: 1px solid #e0e0e0; /* Subtle bottom border */
       text-align: left;
-      margin-bottom: 10px;
     }
     
-    /* Display for the current day */
-    #dayDisplay {
-      font-size: 13px;
-      margin-bottom: 10px;
+    /* Container: full width, flush left with minimal left padding */
+    .container {
+      width: 100%;
+      margin: 0;
+      padding-left: 5px; /* Minimal left padding */
     }
     
-    /* Assignment text */
+    /* Greeting styling: using Montserrat Bold, scaled down to 16px */
+    .greeting {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 3px;
+      line-height: 1.2;
+    }
+    
+    /* Date text styling: small */
+    .date-text {
+      font-size: 0.75rem;
+      margin-bottom: 3px;
+    }
+    
+    /* (Optional) Clock styling if needed */
+    .clock {
+      font-size: 1rem;
+      font-weight: 400;
+    }
+    
+    /* Plan widget container */
+    #planWidget {
+      max-width: 600px;
+      width: 100%;
+      margin: 10px auto;
+      padding: 10px;
+    }
+    
+    /* Assignment text styling */
     #assignment {
-      font-size: 13px;
+      font-size: 12px;
       margin-bottom: 10px;
       line-height: 1.4;
     }
@@ -64,19 +85,30 @@
   </style>
 </head>
 <body>
+  <!-- Header using left2 style -->
+  <header>
+    <div class="container">
+      <div class="greeting">Chronological Bible Reading Plan</div>
+      <div class="date-text" id="dayDisplay"></div>
+      <!-- (Optional: you can include a clock here if desired) -->
+    </div>
+  </header>
+  
+  <!-- Reading plan widget container -->
   <div id="planWidget">
-    <h1>Today's Bible Verse:</h1>
-    <div id="dayDisplay"></div>
     <div id="assignment"></div>
     <button id="markRead">Mark as Read</button>
   </div>
-</body>
-</html>
-
   
   <script>
-    // Define the sections in chronological order.
-    // Each section has a name, the verses (to be displayed as "Today's reading:"), and the number of days allocated.
+    /* 
+      Define the sections in chronological order.
+      Each section includes:
+        - section: The Bible portion name.
+        - verses: The passages to be read (displayed as "Today's reading:" line).
+        - days: The number of days allocated to that section.
+      The last section ("Supplementary Review & Reflection") is allocated enough days to reach exactly 365.
+    */
     const sections = [
       { section: "Job", verses: "Job 1-42", days: 8 },
       { section: "Genesis", verses: "Genesis 1-50", days: 15 },
@@ -114,15 +146,15 @@
     
     // Programmatically generate the 365-day reading plan array.
     let readingPlan = [];
-    let currentDay = 1;
+    let dayCounter = 1;
     sections.forEach(sec => {
       for (let part = 1; part <= sec.days; part++) {
         readingPlan.push({
-          day: currentDay,
+          day: dayCounter,
           assignment: `${sec.section} – Part ${part} of ${sec.days}`,
           todayReading: `Today's reading: ${sec.verses}`
         });
-        currentDay++;
+        dayCounter++;
       }
     });
     
