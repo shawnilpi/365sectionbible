@@ -3,29 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chronological Bible in a Year Reading Plan</title>
-  <!-- Load Cormorant Garamond for the title -->
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&display=swap" rel="stylesheet">
+  <title>Today's Bible Verse</title>
+  <!-- Load Montserrat Bold (700) from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
   <style>
-    /* Load Glacial Indifference via @font-face (hosted from GitHub) */
-    @font-face {
-      font-family: 'Glacial Indifference';
-      src: url('https://raw.githubusercontent.com/filipesilva/Glacial-Indifference/master/GlacialIndifference-Regular.woff') format('woff');
-      font-weight: normal;
-      font-style: normal;
-    }
-    
-    /* Reset and Base Styles */
-    * {
+    /* Basic Reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
     
     body {
       background-color: #ffffff;
       color: #36454F; /* Medium charcoal */
-      font-family: 'Glacial Indifference', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       padding: 5px;
     }
     
@@ -39,28 +31,28 @@
       box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
     
-    /* Title styling: left-aligned, using Cormorant Garamond at 16px */
+    /* Header style matching left2 header, scaled down to 16px */
     h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 19px;
+      font-size: 16px; 
+      font-weight: 700;
       text-align: left;
       margin-bottom: 10px;
     }
     
-    /* Display for the current day (14px) */
+    /* Display for the current day */
     #dayDisplay {
       font-size: 13px;
       margin-bottom: 10px;
     }
     
-    /* Assignment text at 14px */
+    /* Assignment text */
     #assignment {
       font-size: 13px;
       margin-bottom: 10px;
       line-height: 1.4;
     }
     
-    /* Button styling at 12px */
+    /* Button styling */
     button {
       font-size: 12px;
       padding: 4px 8px;
@@ -78,6 +70,9 @@
     <div id="assignment"></div>
     <button id="markRead">Mark as Read</button>
   </div>
+</body>
+</html>
+
   
   <script>
     // Define the sections in chronological order.
