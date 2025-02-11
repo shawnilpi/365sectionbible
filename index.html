@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chronological Bible in a Year Reading Plan</title>
-  <!-- Load Montserrat: Bold for the header title and Normal for body text -->
+  <!-- Load Montserrat: Bold for header, Normal for body -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
     /* Basic Reset */
@@ -21,15 +21,16 @@
       font-family: 'Montserrat', sans-serif;
       font-weight: 400; /* Normal weight for body text */
       margin: 0;
-      padding: 5px;
+      padding: 10px;
+      text-align: left; /* Ensure overall left alignment */
     }
     
     /* Widget container: a simple white box with a thin, uniform border */
     #planWidget {
       max-width: 600px;
       width: 100%;
-      margin: 10px auto;
-      padding: 5px 10px;
+      margin: 10px 0;  /* Top and bottom margin only, no auto centering */
+      padding: 10px 15px;
       background-color: #ffffff;
       border: 1px solid #e0e0e0;
       border-radius: 4px;
@@ -37,15 +38,15 @@
       text-align: left;
     }
     
-    /* Header title inside the box using Montserrat Bold at 16px */
+    /* Header title using Montserrat Bold at 16px */
     .header-title {
       font-size: 16px;
-      font-weight: 700;
+      font-weight: 700; /* Bold */
       margin-bottom: 5px;
       text-align: left;
     }
     
-    /* Divider under the title */
+    /* Divider styling */
     .divider {
       border: none;
       border-bottom: 1px solid #e0e0e0;
@@ -80,9 +81,9 @@
   </style>
 </head>
 <body>
-  <!-- Entire widget inside a white box with a thin uniform border -->
+  <!-- Entire widget inside a simple white box, aligned to the left -->
   <div id="planWidget">
-    <div class="header-title">Bible Study: </div>
+    <div class="header-title">Chronological Bible Reading Plan</div>
     <hr class="divider">
     <div class="day-display" id="dayDisplay"></div>
     <div id="assignment"></div>
@@ -93,7 +94,7 @@
     // Define the sections in chronological order.
     // Each section includes:
     // - section: The Bible portion name.
-    // - verses: The verses to be displayed on the "Today's reading:" line.
+    // - verses: The verses to display as "Today's reading:".
     // - days: The number of days allocated to that section.
     const sections = [
       { section: "Job", verses: "Job 1-42", days: 8 },
@@ -130,7 +131,7 @@
       { section: "Supplementary Review & Reflection", verses: "Review key passages and reflect", days: 146 }
     ];
     
-    // Programmatically generate the 365-day reading plan array.
+    // Generate the 365-day reading plan array.
     let readingPlan = [];
     let dayCounter = 1;
     sections.forEach(sec => {
@@ -187,4 +188,5 @@
   </script>
 </body>
 </html>
+
 
