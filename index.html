@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chronological Bible in a Year Reading Plan</title>
-  <!-- Load Montserrat: Bold for header, Normal for body -->
+  <!-- Load Montserrat: Bold for the header title and Normal for body text -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
     /* Basic Reset */
@@ -14,7 +14,7 @@
       box-sizing: border-box;
     }
     
-    /* Base body styles */
+    /* Base body styles using Montserrat */
     body {
       background-color: #ffffff;
       color: #36454F; /* Medium charcoal */
@@ -24,7 +24,7 @@
       padding: 10px;
     }
     
-    /* Widget container: a simple white box with a thin uniform border */
+    /* Widget container: a simple white box with a thin, uniform border */
     #planWidget {
       max-width: 600px;
       width: 100%;
@@ -40,19 +40,26 @@
     /* Header title inside the box using Montserrat Bold at 16px */
     .header-title {
       font-size: 16px;
-      font-weight: 700; /* Bold */
+      font-weight: 700;
       margin-bottom: 5px;
       text-align: left;
     }
     
-    /* Day display styling in normal weight at 12px */
+    /* Divider under the title */
+    .divider {
+      border: none;
+      border-bottom: 1px solid #e0e0e0;
+      margin: 5px 0 10px 0;
+    }
+    
+    /* Day display styling (normal weight, 12px) */
     .day-display {
       font-size: 12px;
       margin-bottom: 10px;
       text-align: left;
     }
     
-    /* Assignment text styling in normal weight at 12px */
+    /* Assignment text styling (normal weight, 12px) */
     #assignment {
       font-size: 12px;
       margin-bottom: 10px;
@@ -60,7 +67,7 @@
       text-align: left;
     }
     
-    /* Button styling in normal weight at 12px */
+    /* Button styling (normal weight, 12px) */
     button {
       font-size: 12px;
       font-weight: 400;
@@ -73,9 +80,10 @@
   </style>
 </head>
 <body>
-  <!-- Entire widget inside a simple white box with a uniform thin border -->
+  <!-- Entire widget inside a white box with a thin uniform border -->
   <div id="planWidget">
     <div class="header-title">Chronological Bible Reading Plan</div>
+    <hr class="divider">
     <div class="day-display" id="dayDisplay"></div>
     <div id="assignment"></div>
     <button id="markRead">Mark as Read</button>
@@ -85,7 +93,7 @@
     // Define the sections in chronological order.
     // Each section includes:
     // - section: The Bible portion name.
-    // - verses: The verses to display as "Today's reading:".
+    // - verses: The verses to be displayed on the "Today's reading:" line.
     // - days: The number of days allocated to that section.
     const sections = [
       { section: "Job", verses: "Job 1-42", days: 8 },
