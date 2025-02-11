@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chronological Bible in a Year Reading Plan</title>
-  <!-- Load Montserrat for a modern, luxurious look (Bold for header) -->
+  <!-- Load Montserrat: Bold (700) for header, Normal (400) for body -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
     /* Basic Reset */
@@ -14,42 +14,44 @@
       box-sizing: border-box;
     }
     
+    /* Base body styles: using Montserrat Normal */
     body {
       background-color: #ffffff;
-      color: #36454F; /* Medium charcoal */
+      color: #36454F; /* Medium charcoal text */
       font-family: 'Montserrat', sans-serif;
+      font-weight: 400; /* Normal weight */
       margin: 0;
       padding: 10px;
     }
     
-    /* Header section matching left2 style */
+    /* Header Section (matching left2 style) */
     header {
       width: 100%;
       padding: 5px 0; /* Compact vertical padding */
       background-color: #ffffff;
-      border-bottom: 1px solid #e0e0e0; /* Subtle bottom border */
+      border-bottom: 1px solid #e0e0e0;
       text-align: left;
     }
     
-    /* Container for header content: flush left with minimal padding */
+    /* Container for header content */
     .container {
       width: 100%;
       margin: 0;
-      padding-left: 5px;
+      padding-left: 10px; /* Minimal left padding */
     }
     
-    /* Header title using Montserrat Bold at 16px */
+    /* Header title: Montserrat Bold, 16px */
     .header-title {
       font-size: 16px;
-      font-weight: 700;
-      margin-bottom: 10px;
+      font-weight: 700; /* Bold */
+      margin-bottom: 5px;
       text-align: left;
     }
     
-    /* Day display uses normal Montserrat, 12px */
-    .day-display {
+    /* Date display: normal weight, 12px */
+    .date-text {
       font-size: 12px;
-      font-weight: 100;
+      font-weight: 400;
       margin-bottom: 10px;
     }
     
@@ -64,16 +66,18 @@
       box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
     
-    /* Assignment text styling */
+    /* Assignment text styling (body text, 12px) */
     #assignment {
       font-size: 12px;
+      font-weight: 400;
       margin-bottom: 10px;
       line-height: 1.4;
     }
     
-    /* Button styling */
+    /* Button styling (normal weight) */
     button {
       font-size: 12px;
+      font-weight: 400;
       padding: 4px 8px;
       border: 1px solid #ccc;
       border-radius: 3px;
@@ -83,15 +87,15 @@
   </style>
 </head>
 <body>
-  <!-- Header Section (using Montserrat Bold as in left2 header) -->
+  <!-- Header Section using left2 style (no clock) -->
   <header>
     <div class="container">
       <div class="header-title">Chronological Bible Reading Plan</div>
-      <div class="day-display" id="dayDisplay"></div>
+      <div class="date-text" id="dayDisplay"></div>
     </div>
   </header>
   
-  <!-- Reading plan widget container -->
+  <!-- Reading Plan Widget Container -->
   <div id="planWidget">
     <div id="assignment"></div>
     <button id="markRead">Mark as Read</button>
@@ -99,7 +103,10 @@
   
   <script>
     // Define the sections in chronological order.
-    // Each section has a name, a set of verses (which will display as "Today's reading:"), and the number of days allocated.
+    // Each section includes:
+    // - section: Bible portion name.
+    // - verses: The passages for today's reading.
+    // - days: The number of days allocated to that section.
     const sections = [
       { section: "Job", verses: "Job 1-42", days: 8 },
       { section: "Genesis", verses: "Genesis 1-50", days: 15 },
@@ -135,7 +142,7 @@
       { section: "Supplementary Review & Reflection", verses: "Review key passages and reflect", days: 146 }
     ];
     
-    // Programmatically generate the 365-day reading plan array.
+    // Generate the 365-day reading plan array.
     let readingPlan = [];
     let dayCounter = 1;
     sections.forEach(sec => {
@@ -192,3 +199,4 @@
   </script>
 </body>
 </html>
+
