@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chronological Bible in a Year Reading Plan</title>
-  <!-- Load Montserrat: Bold for the title and Normal for body text -->
+  <!-- Load Montserrat for both Bold and Normal weights -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
     /* Basic Reset */
@@ -14,17 +14,17 @@
       box-sizing: border-box;
     }
     
-    /* Base body styles using Montserrat (sans-serif) */
+    /* Base body styles */
     body {
       background-color: #ffffff;
-      color: #36454F; /* Medium charcoal text */
+      color: #36454F; /* Medium charcoal */
       font-family: 'Montserrat', sans-serif;
-      font-weight: 400;
+      font-weight: 400; /* Body text in normal weight */
       margin: 0;
       padding: 10px;
     }
     
-    /* Callout box (widget container) styling */
+    /* Callout box styled to mimic Notion’s callout block */
     #planWidget {
       max-width: 600px;
       width: 100%;
@@ -41,24 +41,26 @@
     /* Header title inside the callout box using Montserrat Bold at 16px */
     .header-title {
       font-size: 16px;
-      font-weight: 700;
+      font-weight: 700; /* Bold */
       margin-bottom: 5px;
     }
     
-    /* Day display in normal weight at 12px */
+    /* Day display styling (body text, 12px) */
     .day-display {
       font-size: 12px;
+      font-weight: 400;
       margin-bottom: 10px;
     }
     
-    /* Assignment text styling in normal weight at 12px */
+    /* Assignment text styling (body text, 12px) */
     #assignment {
       font-size: 12px;
+      font-weight: 400;
       margin-bottom: 10px;
       line-height: 1.4;
     }
     
-    /* Button styling in normal weight at 12px */
+    /* Button styling (body text, 12px) */
     button {
       font-size: 12px;
       font-weight: 400;
@@ -81,7 +83,7 @@
   
   <script>
     // Define the sections in chronological order.
-    // Each section has:
+    // Each section includes:
     // - section: The Bible portion name.
     // - verses: The verses to display as "Today's reading:".
     // - days: The number of days allocated to that section.
@@ -177,5 +179,4 @@
   </script>
 </body>
 </html>
-
 
