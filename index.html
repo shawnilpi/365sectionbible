@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chronological Bible in a Year Reading Plan</title>
-  <!-- Load Montserrat for both Bold and Normal weights -->
+  <!-- Load Montserrat: Bold for header, Normal for body -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
     /* Basic Reset */
@@ -19,48 +19,48 @@
       background-color: #ffffff;
       color: #36454F; /* Medium charcoal */
       font-family: 'Montserrat', sans-serif;
-      font-weight: 400; /* Body text in normal weight */
+      font-weight: 400; /* Normal weight for body text */
       margin: 0;
       padding: 10px;
     }
     
-    /* Callout box styled to mimic Notion’s callout block */
+    /* Widget container: a simple white box with a thin uniform border */
     #planWidget {
       max-width: 600px;
       width: 100%;
       margin: 10px auto;
       padding: 10px 15px;
-      background-color: #F9F9F9;
+      background-color: #ffffff;
       border: 1px solid #e0e0e0;
-      border-left: 4px solid #36454F;
       border-radius: 4px;
       box-shadow: 0 1px 3px rgba(0,0,0,0.1);
       text-align: left;
     }
     
-    /* Header title inside the callout box using Montserrat Bold at 16px */
+    /* Header title inside the box using Montserrat Bold at 16px */
     .header-title {
       font-size: 16px;
       font-weight: 700; /* Bold */
       margin-bottom: 5px;
+      text-align: left;
     }
     
-    /* Day display styling (body text, 12px) */
+    /* Day display styling in normal weight at 12px */
     .day-display {
       font-size: 12px;
-      font-weight: 400;
       margin-bottom: 10px;
+      text-align: left;
     }
     
-    /* Assignment text styling (body text, 12px) */
+    /* Assignment text styling in normal weight at 12px */
     #assignment {
       font-size: 12px;
-      font-weight: 400;
       margin-bottom: 10px;
       line-height: 1.4;
+      text-align: left;
     }
     
-    /* Button styling (body text, 12px) */
+    /* Button styling in normal weight at 12px */
     button {
       font-size: 12px;
       font-weight: 400;
@@ -73,7 +73,7 @@
   </style>
 </head>
 <body>
-  <!-- Entire widget inside a callout-style box -->
+  <!-- Entire widget inside a simple white box with a uniform thin border -->
   <div id="planWidget">
     <div class="header-title">Chronological Bible Reading Plan</div>
     <div class="day-display" id="dayDisplay"></div>
