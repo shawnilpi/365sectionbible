@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chronological Bible in a Year Reading Plan</title>
-  <!-- Load Montserrat: Bold for the header title and Normal for the body text -->
+  <!-- Load Montserrat: Bold for the title and Normal for body text -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
     /* Basic Reset */
@@ -14,7 +14,7 @@
       box-sizing: border-box;
     }
     
-    /* Base body styles using Montserrat sans-serif */
+    /* Base body styles using Montserrat (sans-serif) */
     body {
       background-color: #ffffff;
       color: #36454F; /* Medium charcoal text */
@@ -24,29 +24,31 @@
       padding: 10px;
     }
     
-    /* Callout box styling (mimics Notion callout) */
-    #calloutBox {
-      background-color: #F9F9F9;
-      border-left: 4px solid #36454F;
-      padding: 10px 15px;
-      margin: 10px auto;
+    /* Callout box (widget container) styling */
+    #planWidget {
       max-width: 600px;
+      width: 100%;
+      margin: 10px auto;
+      padding: 10px 15px;
+      background-color: #F9F9F9;
+      border: 1px solid #e0e0e0;
+      border-left: 4px solid #36454F;
       border-radius: 4px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      text-align: left;
     }
     
-    /* Header title: Montserrat Bold at 16px */
+    /* Header title inside the callout box using Montserrat Bold at 16px */
     .header-title {
       font-size: 16px;
       font-weight: 700;
       margin-bottom: 5px;
-      text-align: left;
     }
     
     /* Day display in normal weight at 12px */
     .day-display {
       font-size: 12px;
       margin-bottom: 10px;
-      text-align: left;
     }
     
     /* Assignment text styling in normal weight at 12px */
@@ -54,7 +56,6 @@
       font-size: 12px;
       margin-bottom: 10px;
       line-height: 1.4;
-      text-align: left;
     }
     
     /* Button styling in normal weight at 12px */
@@ -70,8 +71,8 @@
   </style>
 </head>
 <body>
-  <!-- Callout box containing the title and body text -->
-  <div id="calloutBox">
+  <!-- Entire widget inside a callout-style box -->
+  <div id="planWidget">
     <div class="header-title">Chronological Bible Reading Plan</div>
     <div class="day-display" id="dayDisplay"></div>
     <div id="assignment"></div>
@@ -80,9 +81,9 @@
   
   <script>
     // Define the sections in chronological order.
-    // Each section includes:
-    // - section: Bible portion name.
-    // - verses: The verses for "Today's reading:".
+    // Each section has:
+    // - section: The Bible portion name.
+    // - verses: The verses to display as "Today's reading:".
     // - days: The number of days allocated to that section.
     const sections = [
       { section: "Job", verses: "Job 1-42", days: 8 },
@@ -176,4 +177,5 @@
   </script>
 </body>
 </html>
+
 
